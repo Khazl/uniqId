@@ -1,0 +1,14 @@
+{
+  "name": "uniqid",
+  "version": "1.0.0",
+  "description": "A package that returns a unique ID, based on milliseconds and random factors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "author": "Guido Gasper",
+  "license": "ISC",
+  "devDependencies": {
+    "tap": "^14.8.2"
+  }
+}
