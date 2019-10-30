@@ -1,7 +1,16 @@
 module.exports = (length = 10) => {
-    let date = new Date();
-    let uniqId = date.getTime().toString(32).substring(2) + 
-        Math.floor(Math.random() * 1000000000).toString(32);
+    if (length < 8 || length > 12) {
+        throw 'Unique IDs shorter than 8 or longer than 12 characters are not supported';
+    }
+
+    let datePart = Date.now().toString(32);
+    // Cuts maximal the first two characters, depending on the wished length
+    datePart = datePart.substring(datePart.length - (length - 3));
+
+    // Generates random characters to bring some randomness into the unique ID
+    let mathPart = Math.floor(Math.random() * 1000000000).toString(32);
+
+    let uniqId = datePart + mathPart;
 
     return uniqId.substring(0, length);
 }
