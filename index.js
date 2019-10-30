@@ -4,7 +4,7 @@ module.exports = (length = 10) => {
     }
 
     let datePart = Date.now().toString(32);
-    // Cuts maximal the first two characters, depending on the wished length
+    // Cuts maximal the first three characters, depending on the desired length
     datePart = datePart.substring(datePart.length - (length - 3));
 
     // Generates random characters to bring some randomness into the unique ID
